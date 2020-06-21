@@ -21,7 +21,7 @@ class PULSE(torch.nn.Module):
         cache_dir.mkdir(parents=True, exist_ok = True)
         if self.verbose: print("Loading Synthesis Network")
         # synthesis.pt
-        f = open('synthesis.pt')
+        f = open('synthesis.pt', 'rb')
         # with open_url("https://drive.google.com/uc?id=1TCViX1YpQyRsklTVYEJwdbmK91vklCo8", cache_dir=cache_dir, verbose=verbose) as f:
         self.synthesis.load_state_dict(torch.load(f))
 
@@ -37,7 +37,7 @@ class PULSE(torch.nn.Module):
             mapping = G_mapping().cuda()
 
             # mapping.pt
-            f = open('mapping.pt')
+            f = open('mapping.pt', 'rb')
             # with open_url("https://drive.google.com/uc?id=14R6iHGf5iuVx3DMNsACAl7eBr7Vdpd0k", cache_dir=cache_dir, verbose=verbose) as f:
             mapping.load_state_dict(torch.load(f))
 

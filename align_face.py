@@ -33,7 +33,7 @@ output_dir.mkdir(parents=True,exist_ok=True)
 print("Downloading Shape Predictor")
 
 # shape_predictor_68_face_landmarks.dat
-f = open('shape_predictor_68_face_landmarks.dat')
+f = open('shape_predictor_68_face_landmarks.dat', 'rb')
 # f=open_url("https://drive.google.com/uc?id=1huhv8PYpNNKbGCLOaYUjOgR1pY5pmbJx", cache_dir=cache_dir, return_path=True)
 predictor = dlib.shape_predictor(f)
 
